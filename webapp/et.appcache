@@ -1,0 +1,35 @@
+CACHE MANIFEST
+
+#version 0.1.0 2014-01-12
+
+CACHE:
+
+acoustic/et_EE/pocketsphinx.js
+audio/alarmclock.wav
+css/base.css
+css/perc.css
+grammars/Alarm/AlarmEst.dict.js
+grammars/Alarm/AlarmEst.fsg.js
+grammars/Alarm/Alarm.js
+js/audioRecorder.js
+js/audioRecorderWorker.js
+js/callbackManager.js
+js/gflib.js
+js/jquery-2.0.3.min.js
+js/jquery.timer.js
+js/garlic.min.js
+js/pgfapi.js
+js/pgf_online.js
+js/recognizer.js
+js/support.js
+js/mespeak/mespeak.js
+js/mespeak/mespeak_config.json
+js/mespeak/voices/hu.json
+js/audioSprite.js
+js/main.js
+js/settings_et.js
+js/settings.js
+js/timer.js
+
+NETWORK:
+*

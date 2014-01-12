@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" manifest="en.appcache">
+<head>
+<meta charset="utf-8"/>
+<meta name="description" content="Hands-free always-on timer"/>
+<meta name="author" content="Kaarel Kaljurand"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+
+<title>Timer</title>
+<link rel="shortcut icon" sizes="196x196" href="img/timer-196.png"/>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/perc.css"/>
+<!-- Order is important -->
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.timer.js"></script>
+<script src="js/garlic.min.js"></script>
+<script src="js/gflib.js"></script>
+<script src="grammars/Alarm/Alarm.js"></script>
+<script src="grammars/Alarm/AlarmEng.dict.js"></script>
+<script src="grammars/Alarm/AlarmEng.fsg.js"></script>
+<script src="js/support.js"></script>
+<script src="js/pgf_online.js"></script>
+<script src="js/pgfapi.js"></script>
+<script src="js/audioSprite.js"></script>
+<!-- Note: settings_en.js must be loaded after settings.js to be able to override it. -->
+<script src="js/settings.js"></script>
+<script src="js/settings_en.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/main.js"></script>
+<!-- Note: the recognizer is loaded through a Web Worker. -->
+<script src="js/audioRecorder.js"></script>
+<script src="js/callbackManager.js"></script>
+<!--
+<script src="js/speakClient.js"></script>
+-->
+<script src="js/mespeak/mespeak.js"></script>
+</head>
+<body>
+
+<div class="countdownContainer">
+<span id="countdown">--:--:--</span>
+</div>
+
+<div class="box">
+<form id="settings" data-persist="garlic">
+<input type="checkbox" id="toggleSpeak" name="toggleSpeak"/>
+<label for="toggleSpeak" class="inline">Speech output</label>
+<br/>
+<input type="checkbox" id="toggleDetailedLog" name="toggleDetailedLog"/>
+<label for="toggleDetailedLog" class="inline">Detailed log</label>
+<!--
+<br/>
+<label for="beepDuration" class="inline">Duration of alarm</label>
+<select id="beepDuration" class="remove-bottom" name="beepDuration">
+  <option value="60000">1 min</option>
+  <option value="10000" selected="selected">10 sec</option>
+  <option value="5000">5 sec</option>
+</select>
+-->
+<br/>
+<a href="#" id="btnSpeak">Test: TTS</a>
+<br/>
+<a href="#" id="alarmInOneMinute">Test: set alarm for 1 min</a>
+</form>
+
+<p id="output">
+</p>
+
+<div id="examples">
+<p>Wait for the grammar to load (i.e. until the log shows "Obtaining access to microphone..."),
+then allow the browser to use the microphone.
+A red prompt should now appear under the timer,
+if not then reload the page and try again.
+To test, speak e.g. these phrases:</p>
+<p class="examples">
+wake me up in six minutes from now
+<br/>
+wake me up in two hours and thirty minutes from now
+<br/>
+set the alarm to eighteen oh three
+<br/>
+set the alarm to twenty three fifty nine
+</p>
+
+<div><a href="about/en/index.html">More information...</a></div>
+</div>
+
+<table id="log">
+</table>
+</div>
+
+<div class="buttonsContainer">
+<span id="buttons">
+<button id="toggleListening" class="half-bottom">Dont listen!</button>
+<button id="toggleSettings" class="half-bottom">Settings</button>
+<button id="toggleHelp" class="half-bottom">Help</button>
+
+<!-- wav: supported by everybody -->
+<br/>
+<audio id="audioCueSprite" src="audio/alarmclock.wav" preload="auto" controls="controls"></audio>
+</span>
+</div>
+
+<!-- TODO: this is for speak.js, but not for mespeak.js -->
+<!--
+<div id="audio"></div>
+-->
+
+</body>
+</html>

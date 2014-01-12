@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="et" manifest="et.appcache">
+<head>
+<meta charset="utf-8"/>
+<meta name="description" content="Eestikeelse kõne abil juhitav taimer ja äratuskell"/>
+<meta name="author" content="Kaarel Kaljurand"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+
+<title>Taimer</title>
+<link rel="shortcut icon" sizes="196x196" href="img/timer-196.png"/>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/perc.css"/>
+<!-- Order is important -->
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.timer.js"></script>
+<script src="js/garlic.min.js"></script>
+<script src="js/gflib.js"></script>
+<script src="grammars/Alarm/Alarm.js"></script>
+<script src="grammars/Alarm/AlarmEst.dict.js"></script>
+<script src="grammars/Alarm/AlarmEst.fsg.js"></script>
+<script src="js/support.js"></script>
+<script src="js/pgf_online.js"></script>
+<script src="js/pgfapi.js"></script>
+<script src="js/audioSprite.js"></script>
+<!-- Note: settings_et.js must be loaded after settings.js to be able to override it. -->
+<script src="js/settings.js"></script>
+<script src="js/settings_et.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/main.js"></script>
+<!-- Note: the recognizer is loaded through a Web Worker. -->
+<script src="js/audioRecorder.js"></script>
+<script src="js/callbackManager.js"></script>
+<!--
+<script src="js/speakClient.js"></script>
+-->
+<script src="js/mespeak/mespeak.js"></script>
+</head>
+<body>
+
+<div class="countdownContainer">
+<span id="countdown">--:--:--</span>
+</div>
+
+<div class="box">
+<form id="settings" data-persist="garlic">
+<input type="checkbox" id="toggleSpeak" name="toggleSpeak"/>
+<label for="toggleSpeak" class="inline">Kõneväljund</label>
+<br/>
+<input type="checkbox" id="toggleDetailedLog" name="toggleDetailedLog"/>
+<label for="toggleDetailedLog" class="inline">Detailsem logi</label>
+<!--
+<br/>
+<label for="beepDuration" class="inline">Alarmi kestus</label>
+<select id="beepDuration" class="remove-bottom" name="beepDuration">
+  <option value="60000">1 min</option>
+  <option value="10000" selected="selected">10 sek</option>
+  <option value="5000">5 sek</option>
+</select>
+-->
+<br/>
+<a href="#" id="btnSpeak">Test: TTS</a>
+<br/>
+<a href="#" id="alarmInOneMinute">Test: set alarm for 1 min</a>
+</form>
+
+<p id="output">
+</p>
+
+<div id="examples">
+<p>Oodake kuni ilmub kiri "Üritan mikrofoni sisse lülitada...",
+siis lubage brauseril juurdepääs mikrofonile.
+Nüüd peaks ilmuma punane prompt taimeri näidu alla.
+Taimer saab aru nt sellistest käskudest:</p>
+<p class="examples">
+ärata mind palun kuus minutit hiljem
+<br/>
+ärata mind kaks tundi ja kolm minutit hiljem
+<br/>
+ärata mind kell viisteist null kolm
+<br/>
+palun ärata mind kakskümmend kolm viiskümmend üheksa
+</p>
+
+<div><a href="about/et/index.html">Rohkem infot...</a></div>
+</div>
+
+<table id="log">
+</table>
+</div>
+
+<div class="buttonsContainer">
+<span id="buttons">
+<button id="toggleListening" class="half-bottom">Ära kuula!</button>
+<button id="toggleSettings" class="half-bottom">Seaded</button>
+<button id="toggleHelp" class="half-bottom">Abi</button>
+
+<!-- wav: supported by everybody -->
+<br/>
+<audio id="audioCueSprite" src="audio/alarmclock.wav" preload="auto" controls="controls"></audio>
+</span>
+</div>
+
+<!-- TODO: this is for speak.js, but not for mespeak.js -->
+<!--
+<div id="audio"></div>
+-->
+
+</body>
+</html>

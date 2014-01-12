@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="et" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Taimer: Kasutusjuhend</title>
+        <meta name="author" content="Kaarel Kaljurand">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="../css/normalize.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="../js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <h1>Taimer</h1>
+        <p>Taimer on äratuskella- ja taimerirakendus, mille kasutajaliides põhineb kõnetuvastusel. Toetatud on nt sellised kõnekäsud:</p>
+
+        <ul>
+            <li><code>ärata mind palun kuus minutit hiljem</code></li>
+            <li><code>ärata mind kaks tundi ja kolm minutit hiljem</code></li>
+            <li><code>ärata mind kell viisteist null kolm</code></li>
+            <li><code>palun ärata mind kakskümmend kolm viiskümmend üheksa</code></li>
+        </ul>
+
+        <p>Kõnetuvastuse täpsus sõltub mikrofoni kvaliteedist, kõneleja ja mikrofoni vahelisest kaugusest, ning taustamürast. Ka heade tingimuste puhul on mõningaid fraase raske eristada, nt "kakskümmend kakskümmend" ja "kakskümmend kaks kümme". Sel juhul öelge käsk, mis on kellaajaliselt soovitud käsu lähedal, nt "kakskümmend kakskümmend üks".</p>
+        <p>Taimeri peatamiseks paluge äratust praeguseks kellaajaks, või lihtsalt sulgege rakendus.</p>
+
+        <h2>Paigaldamine</h2>
+        <p>Taimer on veebirakendus, st ta töötab veebibrauseris, ükskõik kas lauaarvutis, tahvelarvutis või nutitelefonis. Seega on Taimeri paigaldamine lihtne: klikkige lihtsalt lingile <a href="/timer/et.html">/timer/et.html</a> ning looge sellele järjehoidja (<em>bookmark</em>). Taimer ei vaja tööks interneti olemasolu, st vastav link toimib pärast paigaldust ka siis kui internet on välja lülitatud.</p>
+        <p>Taimer vajab tööks suhteliselt moodsat veebibrauserit (mis toetab nt heli salvestamist ja offline-režiimi, ja millel on kiire Javascripti mootor). Selliseks on 2014 a. jaanuari seisuga ainult Google Chrome. Brauserite mobiilsed versioonid ei pruugi kogu Taimeri funktsionaalsust toetada, ja/või võivad olla kasutamiseks liiga aeglased.</p>
+        <h3>Paigaldamine Google Chrome brauserile Androidi nutiseadmetes</h3>
+
+        <div class="screenshots">
+        <figure>
+            <img src="img/screenshot_add_to_homescreen.png">
+            <figcaption>Avage Taimeri rakendus lehelt <a href="/timer/et.html">/timer/et.html</a>, ning lisage see seadme koduekraanile.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_launcher.png">
+            <figcaption>Taimeri käivitusikoon on nüüd Androidi koduekraanil ning käivitamine on võimalik ka ilma internetti sisselülitamata.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_allow_microphone.png">
+            <figcaption>Taimeri käivitamine võtab mõned sekundid aega (sõltuvalt seadme kiirusest). Seejärel palub Taimer ligipääsu seadme mikrofonile, mis on vajalik kõnekäskude kuulamiseks. (Teised Androidirakendused samaaegselt mikrofoni kasutada ei saa.)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_input.png">
+            <figcaption>Taimeri (visuaalne) kasutajaliides näitab (1) järelejäänud aega, (2) (osaliselt) tuvastatud sisendkäsku (tekst punase kursori kõrval), (3) eelmiste käskude logi, ja (4) nuppe kuulamise sisse/välja lülitamiseks, seadete paneeli kuvamiseks, ja abiteksti näitamiseks.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_clear_data.png">
+            <figcaption>Taimeri sulgemiseks vajutage BACK-nuppu. Taimeri eemaldamiseks seadmest tuleb puhastada brauseri mälu (Chrome'i seaded: Settings -> Content settings -> Website settings).</figcaption>
+        </figure>
+        </div>
+
+        <h2 class="clearboth">Kasutatud tehnoloogiad</h2>
+        <p>Taimer kasutab tehnoloogiaid <a href="https://github.com/syl22-00/pocketsphinx.js">pocketsphinx.js</a>, <a href="http://www.masswerk.at/mespeak/">meSpeak.js</a>, <a href="http://www.grammaticalframework.org">Grammatical Framework</a>, ja <a href="https://github.com/alumae/et-pocketsphinx-tutorial">eesti keele akustilised mudelid</a>. Sisendkeele grammatika formaalne kirjeldus on <a href="http://kaljurand.github.io/Grammars/">Grammars-projekti lehel</a>, mõned automaatselt genereeritud näitelaused on <a href="http://kaljurand.github.io/Grammars/grammars/gr/Alarm.txt">siin</a>.</p>
+        <footer class="clearboth">
+            <address>
+                <a href="http://google.com/+KaarelKaljurand">Kaarel Kaljurand</a>
+            </address>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>

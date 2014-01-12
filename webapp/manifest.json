@@ -1,0 +1,15 @@
+{
+  "name": "Tark taimer",
+  "description": "Eestikeelse kõne abil juhitav taimer ja äratuskell",
+  "version": "0.1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "29",
+  // "audio" requires dev channel
+  "permissions": ["storage", "audioCapture", "tts"],
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "16": "img/timer-16.png", "128": "img/timer-128.png" }
+}

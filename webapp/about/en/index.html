@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Timer: Manual</title>
+        <meta name="author" content="Kaarel Kaljurand">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="../css/normalize.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="../js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <h1>Timer</h1>
+        <p>Timer is an alarm clock and timer application that uses speech recognition to offer a hands-free user interface. Timer understands two types of speech commands: timer commands specify a time period in hours and minutes from the current time, and clock commands specify the 24h clock time in hours and minutes, e.g.</p>
+
+        <ul>
+            <li><code>wake me up in six minutes from now</code></li>
+            <li><code>wake me up in two hours and thirty minutes from now</code></li>
+            <li><code>set the alarm to eighteen oh three</code></li>
+            <li><code>set the alarm to twenty three fifty nine</code></li>
+        </ul>
+
+        <p>The effectiveness of a speech recognition based user interface depends on your distance from the microphone, the quality of the microphone and the presence of background noise. These conditions also determine the suitable use cases for this application (e.g. kitchen timer, night desk alarm clock, etc.).</p>
+        <p>To stop the timer, tell it the current time, or simply close the browser tab/window.</p>
+
+        <h2>Installation</h2>
+        <p>Timer is a web application, i.e. it runs in a web browser, either on your desktop, tablet, or smart phone. This makes its installation and usage straight-forward, just click on <a href="/timer/en.html">/timer/en.html</a> and bookmark it. Timer runs completely offline, i.e. does not require the internet connection after installation. Note that Timer requires a very modern web browser (with support for WebRTC, AppCache, fast Javascript engine, etc.). We have tested it only with the very latest version of Google Chrome.</p>
+        <h3>Google Chrome on Android</h3>
+
+        <div class="screenshots">
+        <figure>
+            <img src="img/screenshot_add_to_homescreen.png">
+            <figcaption>Open the page <a href="/timer/en.html">/timer/en.html</a>, and add it to the homescreen via the Chrome settings menu.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_launcher.png">
+            <figcaption>The application has now a launcher icon on your homescreen and can be used without the internet connection.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_allow_microphone.png">
+            <figcaption>After the application has fully loaded (which can take a few seconds) it asks for the permission to access your microphone. This is needed in order to record your voice commands.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_input.png">
+            <figcaption>The app displays (1) a remaining time indicator, (2) (partially) recognized voice command (text next to a red prompt), (3) the log of previous commands with their timestamps, and (4) buttons to switch on/off the "always listening" mode, show/hide the settings panel, and show/hide a short help text.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/screenshot_clear_data.png">
+            <figcaption>To deinstall the app, clear the data that was has been stored into the Chrome's Settings -> Content settings -> Website settings.</figcaption>
+        </figure>
+        </div>
+
+        <h2 class="clearboth">Used technologies</h2>
+        <p>Timer is based on the technologies of <a href="https://github.com/syl22-00/pocketsphinx.js">pocketsphinx.js</a>, <a href="http://www.masswerk.at/mespeak/">meSpeak.js</a>, and <a href="http://www.grammaticalframework.org">Grammatical Framework</a>. The grammar of the input language is formally specified in the <a href="http://kaljurand.github.io/Grammars/">Grammars-project</a>, some randomly generated examples are <a href="http://kaljurand.github.io/Grammars/grammars/gr/Alarm.txt">here</a>.</p>
+
+        <footer class="clearboth">
+            <address>
+                <a href="http://google.com/+KaarelKaljurand">Kaarel Kaljurand</a>
+            </address>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>
