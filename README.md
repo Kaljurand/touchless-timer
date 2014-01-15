@@ -23,6 +23,7 @@ Browser support
 ---------------
 
   - Chromium 31.0.1650.63 Ubuntu 13.10
+  - Chrome Beta 32.0.1700.99 Android 4.1.2 (but audio feedback does not work)
 
 Building the models
 -------------------
